@@ -1,33 +1,32 @@
 using System;
-using System.Reflection.Metadata.Ecma335;
 
-namespace Calculation 
+namespace Calculator
 {
-    class Calculator
+    class Calculate 
     {
-        private double add(double a, double b)
-        {
+        public decimal Add(decimal a, decimal b)
+        {   
             return a+b;
         }
-
-        private double sub(double a, double b)
+        
+        public decimal Sub(decimal a, decimal b)
         {
             return a-b;
         }
-        
-        private double multip(double a, double b)
-        {
-            return a*b;
-        }
-        
-        private double div(double a, double b) 
-        {
-            if (b == 0)
-            {
-                Console.WriteLine("Do not divide by 0!");
-            }
 
-            return a/b;
+        public decimal Multip(decimal a, decimal b)
+        {
+            return a-b;
         }
+
+        public decimal Divide(decimal a, decimal b)
+        {   
+            if (b==0) {
+                throw new DivideByZeroException("DO NOT DIVIDE BY 0");
+            }
+            return a-b;
+        }
+
+        // private bool Validate(decimal a, decimal b) {};
     }
 }
